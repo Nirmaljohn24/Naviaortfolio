@@ -4,25 +4,23 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-white;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-slate-900;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 900;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -31,75 +29,69 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Professional */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
-  border-radius: 6px;
-  border: 2px solid #0f172a;
+  background: linear-gradient(180deg, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9));
+  border-radius: 5px;
+  border: 2px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0891b2, #7c3aed);
+  background: linear-gradient(180deg, rgba(126, 34, 206, 0.9), rgba(147, 51, 234, 0.9));
 }
 
-/* Floating animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-100vh) translateX(20px);
-    opacity: 0;
-  }
+/* Selection color */
+::selection {
+  background: rgba(147, 51, 234, 0.2);
+  color: #0f172a;
 }
 
-.animate-float {
-  animation: float linear infinite;
+::-moz-selection {
+  background: rgba(147, 51, 234, 0.2);
+  color: #0f172a;
 }
 
-/* Scroll indicator animation */
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(15px);
-    opacity: 0;
+/* Touch optimizations for mobile */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
   }
 }
 
-.animate-scroll {
-  animation: scroll 2s infinite;
-}
-
-/* Gradient text animation */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
   }
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
 }
 
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Better image rendering on mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
