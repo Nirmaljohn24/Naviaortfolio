@@ -85,7 +85,6 @@ function App() {
               <a href="#about" className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">About</a>
               <a href="#work" className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">Work</a>
               <a href="#publications" className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">Publications</a>
-              <a href="#videos" className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">Videos</a>
               <a href="#contact" className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm">Contact</a>
             </div>
           </div>
@@ -133,10 +132,6 @@ function App() {
                 <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-200">
                   <User className="w-4 h-4" style={{ color: 'rgba(147, 51, 234, 0.9)' }} />
                   <span className="text-sm font-medium text-slate-700">Media Professional</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-200">
-                  <Film className="w-4 h-4" style={{ color: 'rgba(168, 85, 247, 0.9)' }} />
-                  <span className="text-sm font-medium text-slate-700">Storyteller</span>
                 </div>
               </div>
             </div>
@@ -219,7 +214,7 @@ function App() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              Professional Work
+               Works as an Anchor
             </h2>
             <div className="w-16 h-1 mx-auto" style={{ background: 'linear-gradient(to right, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8))' }}></div>
           </div>
@@ -240,7 +235,7 @@ function App() {
                 <p className="text-slate-600 mb-4 leading-relaxed">
                   My contributions as an anchor on a YouTube channel, showcasing expertise in broadcast journalism, live reporting, and engaging audience communication.
                 </p>
-                <a 
+                {/* <a 
                   href="https://www.instagram.com/navia_felcin?igsh=NjZlMDN3NXNiMnlh" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -249,6 +244,151 @@ function App() {
                   <Instagram className="w-5 h-5" />
                   View on Instagram
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </a> */}
+
+                {/* Public Opinion */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <MessageCircle className="w-6 h-6" style={{ color: 'rgba(147, 51, 234, 0.9)' }} />
+              <h3 className="text-2xl font-bold text-slate-900">Public Opinion</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {publicOpinionLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-6 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
+                      <Play className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-slate-900 mb-1">{link.title}</h4>
+                      <p className="text-sm text-slate-500 flex items-center gap-2">
+                        <Youtube className="w-4 h-4" />
+                        Watch on YouTube
+                      </p>
+                    </div>
+                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Interviews */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <Video className="w-6 h-6" style={{ color: 'rgba(168, 85, 247, 0.9)' }} />
+              <h3 className="text-2xl font-bold text-slate-900">Interviews</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {interviewLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-5 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(168, 85, 247, 0.9), rgba(147, 51, 234, 0.9))' }}>
+                      <Play className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 text-sm truncate">{link.title}</h4>
+                      <p className="text-xs text-slate-500 flex items-center gap-1">
+                        <Youtube className="w-3 h-3" />
+                        YouTube
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Voice Over */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <Volume2 className="w-6 h-6" style={{ color: 'rgba(147, 51, 234, 0.9)' }} />
+              <h3 className="text-2xl font-bold text-slate-900">Voice Over</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {voiceOverLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-6 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
+                      <Volume2 className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-slate-900 mb-1">{link.title}</h4>
+                      <p className="text-sm text-slate-500 flex items-center gap-2">
+                        <Youtube className="w-4 h-4" />
+                        Watch on YouTube
+                      </p>
+                    </div>
+                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Documentary Section */}
+      <section id="documentary" className="relative pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-8">
+            <div className="inline-block mb-2">
+              <span className="px-4 py-1.5 rounded-full text-sm font-semibold border" style={{ background: 'rgba(147, 51, 234, 0.1)', color: 'rgba(147, 51, 234, 0.9)', borderColor: 'rgba(147, 51, 234, 0.2)' }}>
+                Featured Documentary
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+              Documentary
+            </h2>
+            <div className="w-16 h-1 mx-auto" style={{ background: 'linear-gradient(to right, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8))' }}></div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div className="p-8 sm:p-10 lg:p-12">
+              <div className="flex flex-col items-center text-center mb-6">
+                <div className="w-20 h-20 rounded-xl flex items-center justify-center shadow-lg mb-4" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
+                  <Film className="w-10 h-10 text-white" />
+                </div>
+                <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'rgba(147, 51, 234, 0.9)' }}>Documentary</div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 max-w-3xl">
+                  A Need for a Special Law Against Honor Killing
+                </h3>
+              </div>
+              <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed text-center max-w-3xl mx-auto">
+                A documentary detailing the ongoing caste based honor killings and violence, the importance of a separate law against honor killings, and the significance of strengthening existing laws for the Scheduled Caste community.
+              </p>
+              <div className="flex justify-center">
+                <a 
+                  href="https://www.instagram.com/navia_felcin?igsh=NjZlMDN3NXNiMnlh" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all group/btn text-base"
+                >
+                  <Instagram className="w-5 h-5" />
+                  View on Instagram
+                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
@@ -275,9 +415,9 @@ function App() {
             <p className="text-lg text-slate-700 mb-4 text-center">
               Images of my article published in <strong>Aval Vikatan</strong> magazine
             </p>
-            <p className="text-slate-600 mb-4 leading-relaxed text-center">
+            {/* <p className="text-slate-600 mb-4 leading-relaxed text-center">
               A documentary detailing the ongoing caste based honor killings and violence, the importance of a separate law against honor killings, and the significance of strengthening existing laws for the Scheduled Caste community.
-            </p>
+            </p> */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="rounded-lg overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300">
                 <img src={docImage1} alt="Aval Vikatan Article 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
@@ -391,122 +531,6 @@ function App() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Video Portfolio Section */}
-      <section id="videos" className="relative pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-6">
-            <div className="inline-block mb-2">
-              <span className="px-4 py-1.5 rounded-full text-sm font-semibold border" style={{ background: 'rgba(147, 51, 234, 0.1)', color: 'rgba(147, 51, 234, 0.9)', borderColor: 'rgba(147, 51, 234, 0.2)' }}>
-                Video Portfolio
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              Video Content
-            </h2>
-            <div className="w-16 h-1 mx-auto" style={{ background: 'linear-gradient(to right, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8))' }}></div>
-          </div>
-
-          {/* Public Opinion */}
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-4">
-              <MessageCircle className="w-6 h-6" style={{ color: 'rgba(147, 51, 234, 0.9)' }} />
-              <h3 className="text-2xl font-bold text-slate-900">Public Opinion</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {publicOpinionLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-6 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
-                      <Play className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-slate-900 mb-1">{link.title}</h4>
-                      <p className="text-sm text-slate-500 flex items-center gap-2">
-                        <Youtube className="w-4 h-4" />
-                        Watch on YouTube
-                      </p>
-                    </div>
-                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Interviews */}
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-4">
-              <Video className="w-6 h-6" style={{ color: 'rgba(168, 85, 247, 0.9)' }} />
-              <h3 className="text-2xl font-bold text-slate-900">Interviews</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {interviewLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-5 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(168, 85, 247, 0.9), rgba(147, 51, 234, 0.9))' }}>
-                      <Play className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-slate-900 text-sm truncate">{link.title}</h4>
-                      <p className="text-xs text-slate-500 flex items-center gap-1">
-                        <Youtube className="w-3 h-3" />
-                        YouTube
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Voice Over */}
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-4">
-              <Volume2 className="w-6 h-6" style={{ color: 'rgba(147, 51, 234, 0.9)' }} />
-              <h3 className="text-2xl font-bold text-slate-900">Voice Over</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {voiceOverLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white rounded-lg shadow-md border border-slate-200 p-6 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
-                      <Volume2 className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-slate-900 mb-1">{link.title}</h4>
-                      <p className="text-sm text-slate-500 flex items-center gap-2">
-                        <Youtube className="w-4 h-4" />
-                        Watch on YouTube
-                      </p>
-                    </div>
-                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
         </div>
       </section>
 
