@@ -368,10 +368,6 @@ function App() {
           <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
             <div className="p-8 sm:p-10 lg:p-12">
               <div className="flex flex-col items-center text-center mb-6">
-                <div className="w-20 h-20 rounded-xl flex items-center justify-center shadow-lg mb-4" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
-                  <Film className="w-10 h-10 text-white" />
-                </div>
-                <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'rgba(147, 51, 234, 0.9)' }}>Documentary</div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 max-w-3xl">
                   A Need for a Special Law Against Honor Killing
                 </h3>
@@ -433,6 +429,53 @@ function App() {
         </div>
       </section>
 
+      
+
+      {/* Publications Section */}
+      <section id="publications" className="relative pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-6">
+            <div className="inline-block mb-2">
+              <span className="px-4 py-1.5 rounded-full text-sm font-semibold border" style={{ background: 'rgba(147, 51, 234, 0.1)', color: 'rgba(147, 51, 234, 0.9)', borderColor: 'rgba(147, 51, 234, 0.2)' }}>
+                Publications
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+              Academic & Published Work
+            </h2>
+            <div className="w-16 h-1 mx-auto" style={{ background: 'linear-gradient(to right, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8))' }}></div>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            {/* Research Paper */}
+            <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'rgba(147, 51, 234, 0.9)' }}>Research Paper</div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-1">Misrepresentation of Dalits in the movie Kavundampalayam</h3>
+                  <p className="text-sm text-slate-500">Navia Felcin A (23-UDJ-007)</p>
+                </div>
+              </div>
+              <p className="text-slate-600 mb-4 leading-relaxed">
+                This research paper critically analyzes how the Tamil movie "Kavundampalayam (2024)", directed by Pa. Ranjith, creates false narratives about Dalits and misrepresents them through the lens of Stuart Hall's representation theory.
+              </p>
+              <a 
+                href={researchPaper} 
+                download
+                className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all group/btn"
+              >
+                <Download className="w-5 h-5" />
+                Download Paper
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Magazine - உடலின் உரையாடல் Section */}
       <section id="magazine" className="relative pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
@@ -484,51 +527,6 @@ function App() {
                   <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Publications Section */}
-      <section id="publications" className="relative pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-6">
-            <div className="inline-block mb-2">
-              <span className="px-4 py-1.5 rounded-full text-sm font-semibold border" style={{ background: 'rgba(147, 51, 234, 0.1)', color: 'rgba(147, 51, 234, 0.9)', borderColor: 'rgba(147, 51, 234, 0.2)' }}>
-                Publications
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              Academic & Published Work
-            </h2>
-            <div className="w-16 h-1 mx-auto" style={{ background: 'linear-gradient(to right, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8))' }}></div>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            {/* Research Paper */}
-            <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center shadow-md flex-shrink-0" style={{ background: 'linear-gradient(to bottom right, rgba(147, 51, 234, 0.9), rgba(168, 85, 247, 0.9))' }}>
-                  <FileText className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'rgba(147, 51, 234, 0.9)' }}>Research Paper</div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-1">Misrepresentation of Dalits in the movie Kavundampalayam</h3>
-                  <p className="text-sm text-slate-500">Navia Felcin A (23-UDJ-007)</p>
-                </div>
-              </div>
-              <p className="text-slate-600 mb-4 leading-relaxed">
-                This research paper critically analyzes how the Tamil movie "Kavundampalayam (2024)", directed by Pa. Ranjith, creates false narratives about Dalits and misrepresents them through the lens of Stuart Hall's representation theory.
-              </p>
-              <a 
-                href={researchPaper} 
-                download
-                className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all group/btn"
-              >
-                <Download className="w-5 h-5" />
-                Download Paper
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </a>
             </div>
           </div>
         </div>
